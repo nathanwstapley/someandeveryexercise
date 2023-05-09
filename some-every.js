@@ -6,7 +6,14 @@ Examples:
     hasOddNumber([2,2,2,2,2,4]) // false
 */
 
-function hasOddNumber(arr) {}
+function hasOddNumber(arr) {
+    let hasOddNum = arr.some(function(val){
+        if(val % 2 !== 0){
+            return true;
+        }
+    })
+    return hasOddNum;
+}
 
 /*
 Write a function called hasAZero which accepts a number and returns true if that number contains at least one zero. Otherwise, the function should return false
@@ -16,7 +23,20 @@ Examples:
     hasAZero(1212121) // false
 */
 
-function hasAZero(num) {}
+function hasAZero(num) {
+    let numArr = [];
+
+    numArr = Array.from(num.toString()).map(Number);
+    console.log(numArr)
+
+
+    let hasZero = numArr.some(function(elem){
+        if (elem === 0){
+            return true;
+        }
+    })
+    return hasZero;
+}
 
 /*
 Write a function called hasOnlyOddNumbers which accepts an array and returns true if every single number in the array is odd. If any of the values in the array are not odd, the function should return false. 
